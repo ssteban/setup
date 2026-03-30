@@ -12,6 +12,7 @@ Configuración automática y optimizada de **Hyprland** con Waybar, incluyendo t
 - 🔋 **Botón de apagar** con menú contextual
 - 🎨 **Tema visual moderno** con colores y transiciones
 - 🖼️ **Fondo de pantalla** automático
+- 📁 **Gestor de archivos (Thunar)** integrado
 - ⌨️ **Atajos de teclado** óptimos
 
 ## 📋 Requisitos del Sistema
@@ -41,7 +42,8 @@ El script automáticamente:
 |-------|--------|
 | `SUPER` | Abre menú |
 | `SUPER + RETURN` | Terminal (kitty) |
-| `SUPER + E` | Menú de aplicaciones |
+| `SUPER + SPACE` | Menú de aplicaciones (Wofi) |
+| `SUPER + E` | Thunar (gestor de archivos) |
 | `SUPER + Q` | Cerrar ventana activa |
 | `SUPER + F` | Pantalla completa |
 
@@ -147,6 +149,15 @@ En `waybar/config`, añade números a `"format-icons"`:
 "8": "🎬"
 ```
 
+### Aplicaciones Incluidas
+
+El setup incluye automáticamente:
+- **kitty**: Terminal emulador rápido y moderno
+- **Wofi**: Menú de aplicaciones
+- **Thunar**: Gestor de archivos
+- **Neovim**: Editor de texto avanzado
+- **NetworkManager**: Gestor de conexiones
+
 ### Instalar Aplicaciones Adicionales
 
 ```bash
@@ -155,9 +166,6 @@ sudo pacman -S firefox
 
 # Editor avanzado
 sudo pacman -S code
-
-# Gestor de archivos
-sudo pacman -S thunar
 ```
 
 ## 📊 Información del Sistema en la Barra
@@ -212,15 +220,7 @@ hyprpaper &
 - [Waybar GitHub](https://github.com/Alexays/Waybar)
 - [Arch Wiki - Hyprland](https://wiki.archlinux.org/title/Hyprland)
 
-## 💡 Mejoras Sugeridas
-
-- Tema oscuro/claro intercambiable
-- Integración con Spotify
-- Notificaciones personalizadas (swaync)
-- Widgets de clima
-- Tema GTK sincronizado
-
-## 📝 Changelog
+##  Changelog
 
 ### v1.2 (Actual)
 - ✅ Módulo de red con IP
