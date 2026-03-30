@@ -8,6 +8,7 @@ sudo pacman -S --noconfirm \
   waybar \
   wofi \
   hyprpaper \
+  thunar \
   git \
   neovim \
   networkmanager \
