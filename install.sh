@@ -12,8 +12,20 @@ sudo pacman -S --noconfirm \
   neovim \
   networkmanager \
   ttf-dejavu \
-  ttf-font-awesome
+  ttf-font-awesome \
+  swaync \
+  alsa-utils \
+  iw \
+  base-devel \
+  brightnessctl \
+  playerctl \
+  curl \
+  jq \
+  zenity
 
 sudo systemctl enable NetworkManager
 
-echo "Instalación lista"
+echo "✓ Paquetes instalados"
+echo "✓ NetworkManager habilitado"
+echo ""
+echo "=== Instalación completada ==="

@@ -1,0 +1,171 @@
+/* Swaync Notification Daemon Styles */
+
+* {
+    font-family: "DejaVu Sans", sans-serif;
+}
+
+/*Notification body*/
+.notification {
+    background: linear-gradient(to right, rgba(10, 10, 15, 0.95), rgba(15, 8, 20, 0.95));
+    border: 1px solid rgba(85, 88, 217, 0.4);
+    border-radius: 8px;
+    margin: 8px 0;
+    padding: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    color: #e8e8ff;
+}
+
+.notification.critical {
+    border-left: 4px solid #dc2626;
+    background: linear-gradient(to right, rgba(20, 10, 10, 0.98), rgba(25, 8, 15, 0.98));
+}
+
+.notification.low {
+    border-left: 4px solid #2d9554;
+}
+
+.notification.normal {
+    border-left: 4px solid #5558d9;
+}
+
+.notification.urgency-low {
+    opacity: 0.8;
+}
+
+.notification.urgency-normal {
+    opacity: 1;
+}
+
+.notification.urgency-critical {
+    opacity: 1;
+}
+
+/* Notification Title */
+.notification-content .title {
+    color: #e8e8ff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+/* Notification Body Text */
+.notification-content .body {
+    color: #d0d0e8;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Control Center */
+.control-center {
+    background: linear-gradient(to right, rgba(10, 10, 15, 0.98), rgba(15, 8, 20, 0.98));
+    border: 1px solid rgba(85, 88, 217, 0.3);
+    border-radius: 8px;
+    color: #e8e8ff;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+/* Buttons */
+.notification-action {
+    background: rgba(85, 88, 217, 0.2);
+    border: 1px solid rgba(85, 88, 217, 0.4);
+    border-radius: 5px;
+    color: #d0d0e8;
+    padding: 6px 12px;
+    margin: 2px;
+    transition: all 0.3s ease;
+}
+
+.notification-action:hover {
+    background: rgba(85, 88, 217, 0.4);
+    border-color: #5558d9;
+    color: #e8e8ff;
+    transform: scale(1.02);
+}
+
+.notification-action:active {
+    background: #5558d9;
+    border-color: #7074e8;
+}
+
+/* Close Button */
+.notification-default-action {
+    padding: 0;
+}
+
+.close-button {
+    background: rgba(220, 38, 38, 0.2);
+    border: none;
+    color: #dc2626;
+    border-radius: 4px;
+    padding: 4px 8px;
+    min-width: 20px;
+    transition: all 0.2s ease;
+}
+
+.close-button:hover {
+    background: rgba(220, 38, 38, 0.4);
+    color: #ef4444;
+}
+
+/* Images */
+.notification-image {
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+/* Clear All Button */
+.clear-all-btn {
+    background: rgba(85, 88, 217, 0.2);
+    border: 1px solid rgba(85, 88, 217, 0.4);
+    border-radius: 5px;
+    color: #d0d0e8;
+    padding: 8px 16px;
+    margin: 12px;
+    transition: all 0.3s ease;
+}
+
+.clear-all-btn:hover {
+    background: rgba(85, 88, 217, 0.4);
+    border-color: #5558d9;
+    color: #e8e8ff;
+}
+
+/* Header */
+.control-center-header {
+    background: rgba(10, 10, 15, 0.8);
+    border-bottom: 1px solid rgba(85, 88, 217, 0.3);
+    padding: 12px;
+    border-radius: 8px 8px 0 0;
+}
+
+.control-center-header-title {
+    color: #e8e8ff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Animations */
+.notification {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Notification hover effect */
+.notification:hover {
+    box-shadow: 0 6px 30px rgba(85, 88, 217, 0.3);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}

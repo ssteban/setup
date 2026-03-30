@@ -1,7 +1,135 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["cpu", "memory"]
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 10,
+  
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  
+  "modules-center": [
+    "clock"
+  ],
+  
+  "modules-right": [
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "custom/weather",
+    "custom/spotify",
+    "pulseaudio",
+    "battery",
+    "powermenu"
+  ],
+  
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "format-icons": {
+      "1": "🌐",
+      "2": "📝",
+      "3": "🎮",
+      "4": "🎵",
+      "5": "📁"
+    },
+    "on-click": "activate"
+  },
+  
+  "clock": {
+    "format": "{:%d/%m %H:%M}",
+    "tooltip-format": "<big>{:%Y-%B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  
+  "network": {
+    "format-wifi": "📶 {essid}",
+    "format-ethernet": "🌐 {ipaddr}",
+    "format-disconnected": "❌ Desconectado",
+    "tooltip-format": "{ifname}\nIP: {ipaddr}/{cidr}"
+  },
+  
+  "cpu": {
+    "format": "💻 {usage}%",
+    "tooltip": true,
+    "interval": 2
+  },
+  
+  "memory": {
+    "format": "🧠 {used}GB/{total}GB",
+    "tooltip": true,
+    "interval": 2
+  },
+  
+  "temperature": {
+    "critical-threshold": 80,
+    "format-critical": "🌡️ {temperatureC}°C",
+    "format": "🌡️ {temperatureC}°C",
+    "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+    "input-filename": "temp1_input",
+    "tooltip": true
+  },
+  
+  "custom/weather": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/get_weather.sh",
+    "exec-if": "ping openweathermap.org -c1 > /dev/null 2>&1",
+    "restart-interval": 600,
+    "tooltip": true
+  },
+  
+  "custom/spotify": {
+    "format": "🎵 {}",
+    "max-length": 30,
+    "exec": "~/.config/waybar/scripts/get_spotify.sh",
+    "exec-if": "pgrep -x spotify",
+    "restart-interval": 2,
+    "on-click": "playerctl play-pause --player=spotify",
+    "on-click-right": "playerctl next --player=spotify",
+    "smooth-scrolling-threshold": 10,
+    "scroll-step": 1
+  },
+  
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "🔇 Silenciado",
+    "format-icons": {
+      "default": ["🔊"]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute 0 toggle"
+  },
+  
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["🔴", "🟠", "🟡", "🟢"],
+    "states": {
+      "warning": 20,
+      "critical": 10
+    }
+  },
+  
+  "powermenu": {
+    "format": "🔌",
+    "menu": "power-menu",
+    "menu-actions": [
+      {
+        "label": "Apagar",
+        "action": "~/.config/waybar/scripts/power_confirm.sh poweroff"
+      },
+      {
+        "label": "Reiniciar",
+        "action": "~/.config/waybar/scripts/power_confirm.sh reboot"
+      },
+      {
+        "label": "Suspender",
+        "action": "systemctl suspend"
+      },
+      {
+        "label": "Bloquear",
+        "action": "loginctl lock-session"
+      }
+    ]
+  }
 }
