@@ -27,14 +27,8 @@
   ],
   
   "hyprland/workspaces": {
-    "format": "{name}",
-    "format-icons": {
-      "1": "🌐",
-      "2": "📝",
-      "3": "🎮",
-      "4": "🎵",
-      "5": "📁"
-    },
+    "format": "•",
+    "format-icons": {},
     "on-click": "activate"
   },
   

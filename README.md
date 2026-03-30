@@ -6,6 +6,7 @@ Configuración automática y optimizada de **Hyprland** con Waybar, incluyendo t
 
 - 🖥️ **Barra superior (Waybar)** con todos los módulos necesarios
 - 📡 **IP de red** mostrada en tiempo real
+- 🎵 **Integración con Spotify** mostrando canción en tiempo real
 - 🔊 **Control de volumen** con teclas multimedia
 - 🎚️ **Información del sistema** (CPU, RAM, batería)
 - 🎯 **Workspaces/Escritorios** visuales e interactivos  
@@ -50,8 +51,8 @@ El script automáticamente:
 ### Workspaces
 | Atajo | Acción |
 |-------|--------|
-| `SUPER + 1-5` | Ir a workspace |
-| `SUPER + SHIFT + 1-5` | Mover ventana a workspace |
+| `SUPER + 1-8` | Ir a workspace |
+| `SUPER + SHIFT + 1-8` | Mover ventana a workspace |
 
 ### Control del Sistema
 | Atajo | Acción |
@@ -95,11 +96,13 @@ La barra superior incluye:
 
 | Módulo | Descripción | Ubicación |
 |--------|-------------|-----------|
-| **Workspaces** | Espacios de trabajo (1-5) | Izquierda |
+| **Workspaces** | 8 espacios de trabajo mostrados como puntos (•) | Izquierda |
 | **Reloj** | Hora y fecha actual | Centro |
 | **Red** | Conexión WiFi/Ethernet + IP | Derecha |
 | **CPU** | Uso de procesador en % | Derecha |
 | **RAM** | Memoria utilizada/total | Derecha |
+| **Temperatura** | Temperatura del sistema | Derecha |
+| **Spotify** | Canción actual reproduciendo | Derecha |
 | **Volumen** | Control de audio | Derecha |
 | **Batería** | Estado y % de batería | Derecha |
 | **Power Menu** | Botón para apagar/suspender | Derecha |
@@ -128,6 +131,29 @@ bind = SUPER, E, exec, wofi --show drun  # SUPER + E abre menú
 
 Edita `waybar/style.css`:
 - Colores: Busca `#6366f1` (indigo principal)
+
+### Integración con Spotify
+
+La integración con Spotify muestra la canción que estás reproduciendo en tiempo real en la barra Waybar.
+
+**Visualización:**
+- Aparece en la parte derecha de la barra Waybar
+- Solo se muestra si Spotify está reproduciendo música
+- Formato: 🎵 Canción - Artista
+
+**Controles:**
+- **Click izquierdo**: Play/Pause
+- **Click derecho**: Siguiente canción
+
+**Requisitos:**
+- Tener instalado `playerctl` (ya incluido en la instalación)
+- Spotify ejecutándose en el sistema
+- El script `get_spotify.sh` en `waybar/scripts/`
+
+**Estilos aplicados:**
+- Fondo con degradado verde Spotify + índigo (#6366f1)
+- Bordes redondeados y animaciones suaves
+- Se resalta al pasar el mouse
 - Transparencia: Edita `rgba(20, 20, 30, 0.95)`
 - Fonts: Modifica `font-family` y `font-size`
 

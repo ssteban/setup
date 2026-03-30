@@ -99,7 +99,19 @@ button:hover {
 
 #custom-spotify {
     color: #1db954;
-    padding: 0 10px;
+    background: linear-gradient(90deg, rgba(29, 185, 84, 0.15), rgba(85, 88, 217, 0.1));
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    border-radius: 6px;
+    padding: 4px 12px;
+    margin: 0 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#custom-spotify:hover {
+    background: linear-gradient(90deg, rgba(29, 185, 84, 0.25), rgba(85, 88, 217, 0.15));
+    border-color: rgba(29, 185, 84, 0.5);
+    transform: scale(1.02);
 }
 
 #battery {
